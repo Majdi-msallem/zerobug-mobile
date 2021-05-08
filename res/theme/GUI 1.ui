@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="GUI 1" cloudDestinationProperty="GUI 1" uiid="FormLOGIN" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
+  <component type="Container" name="Container2" cloudDestinationProperty="Container2" >
+    <layoutConstraint value="North" />
+    <component type="Label" name="Label1" cloudDestinationProperty="Label1" uiid="" text="      " >
+    </component>
+  </component>
+  <component type="Container" name="ContainerCENTER" cloudDestinationProperty="ContainerCENTER" rtl="false" layout="TableLayout" tableLayoutRows="7" tableLayoutColumns="1" >
+    <layoutConstraint value="Center" />
+    <component type="Label" name="Label2" cloudDestinationProperty="Label2" text="                                                                      " >
+    </component>
+    <component type="Label" name="Label3" cloudDestinationProperty="Label3" text="                                                                         " >
+    </component>
+    <component type="Label" name="Label" cloudDestinationProperty="Label" uiid="LabelCENTER TRANS" text="" icon="t&#xe9;l&#xe9;charger.png" verticalAlignment="4" textPosition="1" >
+      <layoutConstraint row="0" column="0" height="-1" width="-1" align="-1" spanHorizontal="1" valign="-1" spanVertical="1" />
+    </component>
+    <component type="Container" name="Container" cloudDestinationProperty="Container" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="4" flowLayoutValign="4" >
+      <component type="TextField" name="TextField1" cloudBoundProperty="text" cloudDestinationProperty="TextField1" text="" hint="password" >
+      </component>
+      <component type="TextField" name="TextField" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="" hint="Email" >
+      </component>
+    </component>
+    <component type="Button" name="Button" cloudDestinationProperty="Button" uiid="Login" text="Login" verticalAlignment="4" >
+      <layoutConstraint row="-1" column="-1" height="-1" width="-1" align="4" spanHorizontal="1" valign="4" spanVertical="1" />
+    </component>
+    <component type="Button" name="Button1" cloudDestinationProperty="Button1" uiid="Sign in" text="Sign in" verticalAlignment="4" >
+      <layoutConstraint row="-1" column="-1" height="-1" width="-2" align="4" spanHorizontal="1" valign="4" spanVertical="1" />
+    </component>
+  </component>
+</component>
