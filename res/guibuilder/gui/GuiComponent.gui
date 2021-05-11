@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="0.0" layeredLayoutPreferredHeightMM="0.0"  autolayout="true" title="GuiComponent" scrollableY="false" name="GuiComponent">
+  <component type="Container" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="3"  preferredSize="86.1558mm 73.03133mm" name="Grid_Layout">
+    <layoutConstraint insets="33.162613% auto auto 35.728348%" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+    <component type="Button" text="iOS" name="Button">
+    </component>
+    <component type="Button" text="Android" name="Button">
+    </component>
+    <component type="Button" text="Windows" name="Button">
+    </component>
+    <component type="Button" text="Linux" name="Button">
+    </component>
+    <component type="Button" text="Mac" name="Button">
+    </component>
+  </component>
+</component>
