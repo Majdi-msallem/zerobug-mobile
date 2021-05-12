@@ -86,9 +86,9 @@ public class Prom extends SideMenu{
         EncodedImage enc = EncodedImage.createFromImage(Image.createImage(100,100), true);
         String url = p.getImg();
         ImageViewer img = new ImageViewer(URLImage.createToStorage(enc, url.substring(url.lastIndexOf("/")+1, url.length()), url));
-        for (Article a : list){
-            
-        }
+//        for (Article a : list){
+//            
+//        }
 //        img.getAllStyles().setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FIT);
 //        SpanLabel SLnom = new SpanLabel(p.getNompromotion());
 //        SpanLabel SLnom = new SpanLabel(p.getNompromotion());
