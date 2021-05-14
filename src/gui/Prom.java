@@ -3,8 +3,11 @@ package gui;
 
 import static com.codename1.charts.compat.Paint.Join.MITER;
 import com.codename1.components.ImageViewer;
+import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
+import com.codename1.ui.Button;
 import com.codename1.ui.Container;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.EncodedImage;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
@@ -13,6 +16,8 @@ import com.codename1.ui.Label;
 import com.codename1.ui.Stroke;
 import com.codename1.ui.Toolbar;
 import com.codename1.ui.URLImage;
+import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.RoundBorder;
@@ -20,12 +25,16 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.table.TableLayout;
 import com.codename1.ui.util.Resources;
 import entite.promotion;
+import entite.Article;
 import static java.util.Collections.list;
 import java.util.List;
+import service.ArticleService;
 import service.PromotionService;
 
 public class Prom extends SideMenu{
     private List<promotion> listprom;
+     private List<Article> listart;
+     EncodedImage enc;
     private Form form ;
     private Toolbar tb;
     private Container evenements;
@@ -67,6 +76,8 @@ public class Prom extends SideMenu{
         super(BoxLayout.y());
         Toolbar tb = getToolbar();
 		tb.setUIID("Toolbar");
+                
+                        
         
 //        setTitle("Liste des promotions");
         
@@ -74,18 +85,42 @@ public class Prom extends SideMenu{
         tb.addMaterialCommandToLeftBar("",FontImage.MATERIAL_ARROW_BACK, e-> showOtherForm(res));
 //        SpanLabel sp = new SpanLabel();
         List<promotion> list = PromotionService.getInstance().getAllpromo();
-        
+        List<Article> lista = ArticleService.getInstance().getAllArt();
+       
         for (promotion p : list){
         
         Container cnt1 = new Container(BoxLayout.y());   
         Container cnt2 = new Container(BoxLayout.x());
         
-        SpanLabel SLnom = new SpanLabel(p.getNompromotion());
-        SpanLabel SLdesc = new SpanLabel(p.getDescription());
-        SpanLabel SLrem = new SpanLabel(Integer.toString(p.getRemise())+"%");
-        EncodedImage enc = EncodedImage.createFromImage(Image.createImage(100,100), true);
-        String url = p.getImg();
-        ImageViewer img = new ImageViewer(URLImage.createToStorage(enc, url.substring(url.lastIndexOf("/")+1, url.length()), url));
+        Label SLnom = new Label(p.getNompromotion());
+//        SpanLabel SLdesc = new SpanLabel(p.getDescription());
+        Label SLrem = new Label(Integer.toString(p.getRemise())+"%");
+        Button SLvoir = new Button("Voir la promotion");
+        SLvoir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                Dialog.show(p.getNompromotion(), p.getDescription(), "Voir la promotion", null);
+            }
+
+        });
+        
+        
+        
+        
+        
+        //IMAGE
+//        EncodedImage enc = EncodedImage.createFromImage(Image.createImage(200, 100), true);
+//        String url = p.getImg();
+//        ImageViewer img = new ImageViewer(URLImage.createToStorage(enc, url.substring(url.lastIndexOf("/")+1, url.length()), url,URLImage.RESIZE_SCALE_TO_FILL));
+        
+//        String url = p.getImg();
+//        enc = EncodedImage.create(p.getImg());
+//        
+//        imgs=URLImage.createToStorage(enc, url.substring(url.lastIndexOf("/")+1), url,URLImage.RESIZE_SCALE_TO_FILL);
+//        ImageViewer img = new ImageViewer(imgs);
+        
+        
+        
 //        for (Article a : list){
 //            
 //        }
@@ -100,11 +135,19 @@ public class Prom extends SideMenu{
 //        cnt2.getStyle().setBorder(RoundBorder.create(). rectangle(true). color(0xffffff). strokeColor(0). strokeOpacity(50));
 
 
-        cnt1.add(SLnom);
-        cnt1.add(SLdesc);
-        cnt1.add(SLrem);
-        cnt1.add(img);
+        cnt2.add(SLnom);
+//        cnt1.add(SLdesc);
+        cnt2.add(SLrem);
+        
+//        cnt1.add(img);
         cnt1.add(cnt2);
+        cnt1.add(SLvoir);
+//        for (Article a : lista){
+//         SpanLabel SLnomA = new SpanLabel(a.getNom());   
+//         cnt1.add(SLnomA);
+//        }
+        
+        
         add(cnt1);
             
         

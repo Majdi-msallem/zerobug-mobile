@@ -50,7 +50,7 @@ public class MyApplication {
     }
     
     public void start() {
-       new Prom(theme).show();
+       new Home(theme).show();
 //        new GuiComponent().show();
     }
 
