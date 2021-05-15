@@ -10,8 +10,16 @@ public class promotion {
    private String nompromotion,description,img;
    private Date dateP;
    private List<String> art=new ArrayList<String>();
+   private List<Article> articles = new ArrayList<Article>();
    private String nom; 
- 
+   
+     public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
 
     public String getNom() {
         return nom;
@@ -110,7 +118,7 @@ public class promotion {
 
     @Override
     public String toString() {
-        return "promotion{" + "id=" + id + ", remise=" + remise + ", nompromotion=" + nompromotion + ", description=" + description + ", img=" + img + ", dateP=" + dateP + ", art=" + art + '}'+'\n'+'\n';
+        return "promotion{" + "id=" + id + ", remise=" + remise + ", nompromotion=" + nompromotion + ", description=" + description + ", img=" + img + ", dateP=" + dateP + ", artticles=" + articles + '}'+'\n'+'\n';
     }
 
 

@@ -6,6 +6,7 @@ import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
+import entite.Article;
 import entite.promotion;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,9 +19,12 @@ import utilis.statics;
 public class PromotionService {
     
     ArrayList<promotion> listpromo = new ArrayList<>();
+    ArrayList<promotion> listprom = new ArrayList<>();
+    
+    
     public static PromotionService instance;
-    String[] tableauChaine;
-    List<String> listaTest = new ArrayList<String>();
+//    String[] tableauChaine;
+    List<Article> listaTest = new ArrayList<Article>();
     
     
     public static PromotionService getInstance(){
@@ -32,7 +36,7 @@ public class PromotionService {
     
     public ArrayList<promotion> liste(String json){
         ArrayList<promotion> lista = new ArrayList<>();
-        
+        ArrayList<Article> listt = new ArrayList<>();
         try {
             
             JSONParser j = new JSONParser();
@@ -61,11 +65,21 @@ public class PromotionService {
                 }else
                 {
                 for (Map<String, Object> objt : art) {
-                String nomC = objt.get("nom").toString();
-                listaTest.add(nomC);
-                System.out.println("test"+listaTest.size());}
-                
-                p.setArt(listaTest);
+                    Article article = new Article();
+                    article.setNom(objt.get("nom").toString());
+                    float prix = Float.parseFloat(objt.get("prix").toString());
+                    article.setPrix((int) prix);                   
+//                    listaTest.add(article);
+                    System.out.println("SAM--------"+article.getNom().toString()+"--------"+article.getPrix());
+//                    System.out.println("LA3--------"+p.getArticles());
+                //String nomC = objt.get("nom").toString();
+//                listaTest.add(nomC);
+                //System.out.println("test"+listaTest.size());
+                listt.add(article);
+
+                }
+                    
+//                p.setArt(listaTest);
                 }
 //                List<Map<String, Object>> art = (Map<String, Object>) obj.get("articles");
                 
@@ -107,15 +121,48 @@ public class PromotionService {
             System.out.println("test1");
         }
         
-        System.out.println(lista);
+//        System.out.println(lista);
     return lista;
     }
-    
-    
-    
+    ////// ID ///////
+//    ArrayList<promotion> listprom = new ArrayList<>();
+//     public promotion getID(int id) {
+//        ConnectionRequest con = new ConnectionRequest();
+//        String url = statics.BASE_URL+"allPromoJSON/"+id;
+//            
+//        con.addResponseListener((NetworkEvent evt) -> {
+//            PromotionService ser = new PromotionService();
+//            listprom = ser.liste(new String(con.getResponseData()));
+//        });
+//        NetworkManager.getInstance().addToQueueAndWait(con);
+//        promotion res = listprom.get(0);
+//        return res;
+//    }
+    //////////////////////
+     
+     
+//          public promotion getID(int id) {
+//         
+//        ConnectionRequest con = new ConnectionRequest();
+//        String url = statics.BASE_URL+"allPromoJSON/"+id;
+//            
+//        con.addResponseListener(new ActionListener<NetworkEvent>() {
+//            @Override
+//        public void actionPerformed(NetworkEvent evt) {
+//            PromotionService ser = new PromotionService();
+//            listprom = ser.liste(new String(con.getResponseData()));
+//        }
+//        });
+//        NetworkManager.getInstance().addToQueueAndWait(con);
+//        promotion res = listprom.get(0);
+//        return res;
+//    }
+     
+     
+     /////////////////////
     public ArrayList<promotion> getAllpromo(){
         ConnectionRequest con = new ConnectionRequest();
-    String url = statics.BASE_URL+"allPromoJSON";
+        String url = statics.BASE_URL+"allPromoJSON";
 
         System.out.println("mouch normal"+url);
         
