@@ -161,7 +161,7 @@ public class Prom extends SideMenu{
         
 //        cnt2.getStyle().setBgColor(0x99CCCC);
 //        cnt2.getStyle().setBgTransparency(255);
-//        Stroke borderStroke = new Stroke(2, Stroke.CAP_SQUARE, Stroke.JOIN MITER, 1);
+        Stroke borderStroke = new Stroke(2, Stroke.CAP_SQUARE, Stroke.JOIN_MITER ,1);
 //        cnt2.getStyle().setBorder(RoundBorder.create(). rectangle(true). color(0xffffff). strokeColor(0). strokeOpacity(50));
 
 

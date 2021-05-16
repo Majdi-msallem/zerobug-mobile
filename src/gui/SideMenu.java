@@ -42,6 +42,7 @@ public abstract class SideMenu extends Form {
 
 //        getToolbar().addComponentToSideMenu(sidemenuTop);
             getToolbar().addCommandToSideMenu("Promotion", null, e -> new Prom(res).show());
+            getToolbar().addCommandToSideMenu("Article", null, e -> new Art(res).show());
 
         }
         

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import utilis.statics;
+import utilis.Statics;
 
 
 public class ArticleService {
@@ -102,7 +102,7 @@ public class ArticleService {
     
     public ArrayList<Article> getAllArt(){
         ConnectionRequest con = new ConnectionRequest();
-    String url = statics.BASE_URL+"allArtJSON";
+    String url = Statics.BASE_URL+"/allArtJSON";
 
         System.out.println("mouch normal"+url);
         

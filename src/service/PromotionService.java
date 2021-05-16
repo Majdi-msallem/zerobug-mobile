@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import utilis.statics;
+import utilis.Statics;
 
 
 public class PromotionService {
@@ -65,17 +65,17 @@ public class PromotionService {
                 }else
                 {
                 for (Map<String, Object> objt : art) {
-                    Article article = new Article();
-                    article.setNom(objt.get("nom").toString());
+                    
+                    p.setNomArt(objt.get("description").toString());
                     float prix = Float.parseFloat(objt.get("prix").toString());
-                    article.setPrix((int) prix);                   
+                    p.setPrixArt((Float) prix);                   
 //                    listaTest.add(article);
-                    System.out.println("SAM--------"+article.getNom().toString()+"--------"+article.getPrix());
+                    System.out.println("SAM--------"+p.getNomArt()+"--------"+p.getPrixArt());
 //                    System.out.println("LA3--------"+p.getArticles());
                 //String nomC = objt.get("nom").toString();
 //                listaTest.add(nomC);
                 //System.out.println("test"+listaTest.size());
-                listt.add(article);
+//                lista.add(p);
 
                 }
                     
@@ -121,7 +121,7 @@ public class PromotionService {
             System.out.println("test1");
         }
         
-//        System.out.println(lista);
+        System.out.println("MAHA aman ekhdem"+lista);
     return lista;
     }
     ////// ID ///////
@@ -162,7 +162,7 @@ public class PromotionService {
      /////////////////////
     public ArrayList<promotion> getAllpromo(){
         ConnectionRequest con = new ConnectionRequest();
-        String url = statics.BASE_URL+"allPromoJSON";
+        String url = Statics.BASE_URL+"/allPromoJSON";
 
         System.out.println("mouch normal"+url);
         

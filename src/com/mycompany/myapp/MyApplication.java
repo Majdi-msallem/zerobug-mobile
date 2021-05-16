@@ -15,6 +15,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.io.NetworkEvent;
 import gui.GuiComponent;
 import gui.Home;
+import gui.Login;
 import gui.Prom;
 
 /**
@@ -50,6 +51,7 @@ public class MyApplication {
     }
     
     public void start() {
+//        new  Login(theme,current).show();
        new Prom(theme).show();
 //        new GuiComponent().show();
     }

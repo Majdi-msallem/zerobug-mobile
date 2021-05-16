@@ -9,17 +9,43 @@ public class promotion {
     private int id,remise;
    private String nompromotion,description,img;
    private Date dateP;
-   private List<String> art=new ArrayList<String>();
-   private List<Article> articles = new ArrayList<Article>();
-   private String nom; 
-   
-     public List<Article> getArticles() {
-        return articles;
+   private String nomArt,imgArt;
+   private Float prixArt;
+
+    public String getNomArt() {
+        return nomArt;
     }
 
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
+    public void setNomArt(String nomArt) {
+        this.nomArt = nomArt;
     }
+
+    public String getImgArt() {
+        return imgArt;
+    }
+
+    public void setImgArt(String imgArt) {
+        this.imgArt = imgArt;
+    }
+
+    public Float getPrixArt() {
+        return prixArt;
+    }
+
+    public void setPrixArt(Float prixArt) {
+        this.prixArt = prixArt;
+    }
+//   private List<String> art=new ArrayList<String>();
+//   private List<Article> articles = new ArrayList<Article>();
+   private String nom; 
+   
+//     public List<Article> getArticles() {
+//        return articles;
+//    }
+//
+//    public void setArticles(List<Article> articles) {
+//        this.articles = articles;
+//    }
 
     public String getNom() {
         return nom;
@@ -29,13 +55,13 @@ public class promotion {
         this.nom = nom;
     }
 
-    public List<String> getArt() {
-        return art;
-    }
-
-    public void setArt(List<String> art) {
-        this.art = art;
-    }
+//    public List<String> getArt() {
+//        return art;
+//    }
+//
+//    public void setArt(List<String> art) {
+//        this.art = art;
+//    }
 
     public promotion() {
         
@@ -118,7 +144,7 @@ public class promotion {
 
     @Override
     public String toString() {
-        return "promotion{" + "id=" + id + ", remise=" + remise + ", nompromotion=" + nompromotion + ", description=" + description + ", img=" + img + ", dateP=" + dateP + ", artticles=" + articles + '}'+'\n'+'\n';
+        return "promotion{" + "id=" + id + ", remise=" + remise + ", nompromotion=" + nompromotion + ", description=" + description + ", img=" + img + ", dateP=" + dateP  + '}'+'\n'+'\n';
     }
 
 

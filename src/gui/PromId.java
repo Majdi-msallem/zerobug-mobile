@@ -76,18 +76,24 @@ public class PromId extends Form{
 
     public PromId(promotion p, Form previous) {
         Article article = new entite.Article();
-        EncodedImage enc = EncodedImage.createFromImage(Image.createImage(800, 800), true);
+        EncodedImage enc = EncodedImage.createFromImage(Image.createImage(700, 460), true);
         String url = p.getImg();
         ImageViewer img = new ImageViewer(URLImage.createToStorage(enc, url.substring(url.lastIndexOf("/")+1, url.length()), url,URLImage.RESIZE_SCALE_TO_FILL));
         setTitle(p.getNompromotion());
         setLayout(new FlowLayout(CENTER));
         Container c= new Container(BoxLayout.y());
-        System.out.println("nchalah-------"+article.getNom());
+        Container v= new Container(BoxLayout.x());
+//        System.out.println("nchalah-------"+article.getNom());
         c.add(new Label("Remise="+Integer.toString(p.getRemise())+"%"));
         c.add(img);
-//        c.add(p.getArticles().toString());
+        c.add(new Label(p.getDescription()));
+//        System.out.println(p.getNomArt()+"--------"+Float.toString(p.getPrixArt()));
+//        c.add(p.getNomArt());
+//        c.add(Float.toString(p.getPrixArt()));
         
-        this.add(c);
+        
+        add(c);
+//        add(v);
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK,new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
