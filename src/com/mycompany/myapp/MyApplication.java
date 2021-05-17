@@ -51,8 +51,9 @@ public class MyApplication {
     }
     
     public void start() {
-//        new  Login(theme,current).show();
-       new Prom(theme).show();
+       new  Login(theme,current).show();
+//       new Prom(theme).show();
+//new Home(theme).show();
 //        new GuiComponent().show();
     }
 

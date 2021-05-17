@@ -103,6 +103,9 @@ public class Prom extends SideMenu{
 //        SpanLabel SLdesc = new SpanLabel(p.getDescription());
         Label SLrem = new Label(Integer.toString(p.getRemise())+"%");
         Button SLvoir = new Button("Voir la promotion");
+        
+            System.out.println("SKAN -------> "+p.getNomArt());
+            
 //        SLvoir.addActionListener(new ActionListener() {
 //                @Override
 //                public void actionPerformed(ActionEvent o) {

@@ -65,6 +65,7 @@ public Login ( Resources res,Form previous  ) {
                       
                        TextField tfemail =new TextField("","Useremail");
                        TextField tfpassword =new TextField("","Userpassword");
+                       tfpassword.setConstraint(TextField.PASSWORD);
            
        
   

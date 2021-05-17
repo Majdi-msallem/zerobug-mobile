@@ -9,8 +9,18 @@ public class promotion {
     private int id,remise;
    private String nompromotion,description,img;
    private Date dateP;
+   private List<String> art;
    private String nomArt,imgArt;
    private Float prixArt;
+
+    public List<String> getArt() {
+        return art;
+    }
+
+    public void setArt(List<String> art) {
+        this.art = art;
+    }
+  
 
     public String getNomArt() {
         return nomArt;

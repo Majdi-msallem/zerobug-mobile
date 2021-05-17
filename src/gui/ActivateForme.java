@@ -83,7 +83,7 @@ Button retlog = new Button("Return to Login? ");
             //email 
             System.out.println("***"+email.getText());
             sendMail(res);
-            Dialog.show ("Mot de pass","mdp envoye.Veuillez verifier votre boite email",new Command ("OK"));
+            Dialog.show ("Mot de passe","mdp envoye.Veuillez verifier votre boite email",new Command ("OK"));
             
           new AddregForm(current).show ();
                    refreshTheme();
@@ -106,9 +106,9 @@ Button retlog = new Button("Return to Login? ");
             
             MimeMessage msg = new MimeMessage(session);
             
-            msg.setFrom(new InternetAddress("Reintialisation mot de passe <monEmail@domaine.com>"));
+            msg.setFrom(new InternetAddress("Reintialisation mot de passe"));
             msg.setRecipients(Message.RecipientType.TO, email.getText().toString());
-            msg.setSubject("Application nom  : Confirmation du ");
+            msg.setSubject("[Para'dise] : Réintialisation du mot de passe ");
             msg.setSentDate(new Date(System.currentTimeMillis()));
             
            String mp = ServiceUser.getInstance().getPasswordByEmail(email.getText().toString(), res);//mp taw narj3lo
@@ -119,7 +119,7 @@ Button retlog = new Button("Return to Login? ");
            
           SMTPTransport  st = (SMTPTransport)session.getTransport("smtps") ;
             
-          st.connect("smtp.gmail.com",465,"chadi.troudi@esprit.tn","193JMT4487");
+          st.connect("smtp.gmail.com",465,"para.diseesprit@gmail.com","zerobug2021");
            
           st.sendMessage(msg, msg.getAllRecipients());
             

@@ -20,8 +20,9 @@ public class PromotionService {
     
     ArrayList<promotion> listpromo = new ArrayList<>();
     ArrayList<promotion> listprom = new ArrayList<>();
+//    private List<String> artt;
     
-    
+    List<String> artt = new ArrayList<String>();
     public static PromotionService instance;
 //    String[] tableauChaine;
     List<Article> listaTest = new ArrayList<Article>();
@@ -66,11 +67,13 @@ public class PromotionService {
                 {
                 for (Map<String, Object> objt : art) {
                     
-                    p.setNomArt(objt.get("description").toString());
+                    p.setNomArt(objt.get("nom").toString());
                     float prix = Float.parseFloat(objt.get("prix").toString());
                     p.setPrixArt((Float) prix);                   
 //                    listaTest.add(article);
-                    System.out.println("SAM--------"+p.getNomArt()+"--------"+p.getPrixArt());
+                    
+                    artt.add(p.getNomArt());
+//                    System.out.println("SAM--------"+p.getNomArt()+"--------"+p.getPrixArt());
 //                    System.out.println("LA3--------"+p.getArticles());
                 //String nomC = objt.get("nom").toString();
 //                listaTest.add(nomC);
@@ -78,16 +81,20 @@ public class PromotionService {
 //                lista.add(p);
 
                 }
-                    
+                
+                p.setArt(artt);  
+                
+                System.out.println("YA rabi ----- >"+artt) ; 
 //                p.setArt(listaTest);
                 }
-//                List<Map<String, Object>> art = (Map<String, Object>) obj.get("articles");
+//                List<Map<String, Object>> art = (Map<String, Object>) obj.get("articles");artt.add(p.getNomArt());
+                artt.clear();
                 
                 
 //                System.out.println("ZEBI "+nomC);
 //                for(int i=0 ; i<tableauChaine.length;i++){
 //                
-//                
+System.out.println("aaaaaaaaaaaaaaaaa"+p.getArt()); 
 //                }
                
 //                art.add(objt);

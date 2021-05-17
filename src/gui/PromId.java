@@ -24,6 +24,7 @@ import com.codename1.ui.util.Resources;
 import entite.promotion;
 import service.PromotionService;
 import entite.Article;
+import java.util.Map;
 
 //public class PromId extends SideMenu {
 //
@@ -87,10 +88,15 @@ public class PromId extends Form{
         c.add(new Label("Remise="+Integer.toString(p.getRemise())+"%"));
         c.add(img);
         c.add(new Label(p.getDescription()));
+        System.out.println("besmelleh ------ >"+p.getArt());
 //        System.out.println(p.getNomArt()+"--------"+Float.toString(p.getPrixArt()));
+            for(int i=0 ; i<p.getArt().size();i++){
+              p.setNomArt(p.getArt().get(i));
+              c.add(new Label(p.getNomArt()));  
+               }
 //        c.add(p.getNomArt());
 //        c.add(Float.toString(p.getPrixArt()));
-        
+            
         
         add(c);
 //        add(v);
