@@ -9,6 +9,7 @@ import com.codename1.ui.Button;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.util.Resources;
 
 /**
  *
@@ -16,7 +17,7 @@ import com.codename1.ui.layouts.BoxLayout;
  */
 public class registerform extends Form {
     Form current;
-      public registerform (){
+      public registerform (Resources res){
           current=this;
           setTitle("home");
           
@@ -30,7 +31,7 @@ public class registerform extends Form {
           
           btninscription.addActionListener( e->new  AddregForm(current).show());
        //    btnListreg.addActionListener( e->new  List_reg(current).show());
-           btnlog.addActionListener( e->new  Login(current).show());
+           btnlog.addActionListener( e->new  Login(res,current).show());
              addAll(btninscription,btnListreg,btnlog);
 
       }

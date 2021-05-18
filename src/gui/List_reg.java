@@ -11,6 +11,8 @@ import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
 import entities.User;
+import static gui.Login.Userconnected;
+import static services.ServiceUser.userConncter;
 import utils.Statics;
 
 /**
@@ -24,17 +26,17 @@ public class List_reg extends Form {
          setTitle("Profil");
                Container c = new Container(BoxLayout.y());
 
-  String url=Statics.BASE_URL+"/UserJSON/?id="+u.getId();
+  String url=Statics.BASE_URL+"/UserJSON/?id="+userConncter.getId();
        
 
-        c.add(new Label("Nom : " + u.getName()));
-        c.add(new Label("email : " + u.getEmail()));
-        c.add(new Label("cin : " + u.getCin()));
-        c.add(new Label("mdp : " + u.getPassword()));
+        c.add(new Label("Nom : " + userConncter.getName()));
+        c.add(new Label("email : " +userConncter.getEmail()));
+        c.add(new Label("cin : " + userConncter.getCin()));
+        c.add(new Label("mdp : " + userConncter.getPassword()));
 
         //c.add(new Label("role : " + u.getUserConncter().getRoles()));
-        c.add(new Label("tel : " +u.getPhone()));
-        c.add(new Label("genre : " +u.getGenre()));
+        c.add(new Label("tel : " +userConncter.getPhone()));
+        c.add(new Label("genre : " +userConncter.getGenre()));
      
         add(c);
 
@@ -49,6 +51,10 @@ public class List_reg extends Form {
         
         
         
+    }
+
+    List_reg(Form current) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
