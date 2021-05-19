@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <theme name="Theme">
+        <val key="Title.align" value="4" />
+        <gradient key="Title.bgGradient" color1="3407667" color2="16777011" posX="0.5" posY="0.5" radius="2.0" />
+        <val key="Title.bgType" value="6" />
+    </theme>
+</resource>
