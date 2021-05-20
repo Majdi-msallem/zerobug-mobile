@@ -96,7 +96,7 @@ public class ServiceUser {
            @Override
         public void actionPerformed(NetworkEvent evt) {
                User users = parseTasks(new String(req.getResponseData()));
-               System.out.println("fycgvuhbijnkl"+users);
+             
               req.removeResponseListener(this);
               u.setId(users.getId());
               u.setEmail(users.getEmail());
@@ -105,7 +105,7 @@ public class ServiceUser {
               u.setPhone(users.getPhone());
               u.setGenre(users.getGenre());
               u.setCin(users.getCin());
-              System.out.println(u);
+           
                  }
         });
         return u;
@@ -237,4 +237,25 @@ public class ServiceUser {
     return json;
     }
 
+    
+     public Boolean EditProfil(User userEP) {
+        String url = Statics.BASE_URL + "/UpdateUserJSON/"+userEP.getId()+"?email="+userEP.getEmail()+"&cin="+userEP.getCin()+"&name="+userEP.getName()+"&genre="+userEP.getGenre()+"&phone="+userEP.getPhone() ;
+        System.out.println(url);
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+
+               
+            }
+        });
+                NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+        
+
+    }
+                
 }

@@ -46,7 +46,7 @@ public class Login extends Form{
         public static ServiceUser instance;
     public boolean resultOK; 
     private ConnectionRequest req;
-                     static User Userconnected = new User();
+                //     static User Userconnected = new User();
         public static User userConncter;
 
 public Login ( Resources res,Form previous  ) {
@@ -99,12 +99,13 @@ public Login ( Resources res,Form previous  ) {
 
                  
         User u =new User(tfemail.getText(),tfpassword.getText());
- Userconnected= ServiceUser.getInstance().UserConnecter( u);
+ userConncter= ServiceUser.getInstance().UserConnecter( u);
      if (ServiceUser.getInstance().Login(u)==false){
                Dialog.show("","Check Eamil And Password",new Command("OK"));
               // new SignInForm(res,current).show();
            }else{
-                       // System.out.println(userConncter);
+         
+                       System.out.println("user login"+userConncter);
                  //Userconnected= ServiceUser.getInstance().UserConnecter(username.getText(), password.getText());
                 //VarGlobales.setusername(username.getText());
          new List_reg(current).show();
@@ -138,6 +139,6 @@ public Login ( Resources res,Form previous  ) {
            
              Container cnt = BoxLayout.encloseX(doneHaveAnAccount, signUp);
            addAll(welcome,tfemail,tfpassword,loginButton,cnt, mp);
-    getToolbar().addMaterialCommandToLeftBar("",FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
+   // getToolbar().addMaterialCommandToLeftBar("",FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
                    }
 }

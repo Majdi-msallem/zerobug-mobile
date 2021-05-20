@@ -85,7 +85,7 @@ Form current;
 //       userConncter.setName(u.getName());
 //       userConncter.setGenre(u.getGenre());
 //System.out.println(userConncter);
-                                          new List_reg(current,u).show();
+                                          new List_reg(current).show();
                                     
 
                          }  else {

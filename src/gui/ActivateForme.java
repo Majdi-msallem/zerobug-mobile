@@ -112,6 +112,7 @@ Button retlog = new Button("Return to Login? ");
             msg.setSentDate(new Date(System.currentTimeMillis()));
             
            String mp = ServiceUser.getInstance().getPasswordByEmail(email.getText().toString(), res);//mp taw narj3lo
+           
            String txt = "Bienvenue sur AppNom : Tapez ce mot de passe : "+mp+" dans le champs requis et appuiez sur confirmer";
            
            
